@@ -1,4 +1,5 @@
 const express=require("express")
+// var_require('express')();
 const app=express()
 
 const port= process.env.port || 3000
@@ -49,8 +50,9 @@ app.set('view engine','hbs')
 
 app.get('/',(req,res)=>{
     res.render('index',{
-        title:"home in hbs page",
-        desc:"this is home page"
+        // title:"home page content",
+        desc:"this is home page",
+        weatherImge:"images/weather.jpeg"
         
     })
 })
@@ -81,6 +83,7 @@ app.get('/team',(req,res)=>{
     })
 })
 
+
 app.get('/about',(req,res)=>{
     res.render('about',{
         title:" about page",
@@ -89,6 +92,71 @@ app.get('/about',(req,res)=>{
         age:22
     })
 })
+
+app.get('/products',(req,res)=>{
+    console.log(req.query)
+    console.log(req.query.year)
+    res.send({
+        product:"bmw 520 i"
+    })
+})
+
+
+// app.get('/weather',(req,res)=>{
+//     if(!req.query.address){
+//        return res.send({
+//             error:"you must enter an address"
+//         })
+//     }
+//     res.send({
+//         location:req.query.address,
+//         forecast:"cold"
+//     })
+// })
+
+const geocode=require('../data1/geocode')
+const forecast =require('../data1/forecast')
+
+app.get('/weather',(req,res)=>{
+    if(!req.query.address){
+       return res.send({
+            error:"you must enter an address"
+        })
+    }
+   geocode(req.query.address,(error,data)=>{
+    if(error){
+        return res.send({error})
+       }
+       forecast(data.longtitude,data.latitude,(error,forecastData)=>{
+        if(error){
+          return res.send({error})
+        }
+        res.send({
+            forecast:forecastData,
+         location:req.query.address,
+         longtitude: data.longtitude, 
+        latitude: data.latitude    
+
+         
+        })
+       })
+   })
+   
+})
+
+
+
+
+
+
+
+
+
+app.get('*',(req,res)=>{
+    res.send('404 page not found')
+})
+
+
 
 ///////////////////
 const viewsDirectory=path.join(__dirname,"../temp1/views")

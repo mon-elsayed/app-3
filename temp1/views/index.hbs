@@ -1,14 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h2> {{>header}} </h2>
-    <h2>{{title}}</h2>
-    <h2>{{desc}}</h2>
-</body>
+ <!DOCTYPE html>
+<html>
+      <head>
+           <title> weather-page</title>
+           <link rel="stylesheet"  href="css/style.css" />
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+           
+      </head>
+
+      <body>
+           <h2>{{>header}}</h2>
+           <h2 class="home-header">Welcome to our website.to know the weather of any country,longitude,latitude<span> by writing the name of your country</span></h2>
+           {{!-- <img class="weather-image" src={{weatherImge}} alt="photo"> --}}
+           {{!-- <h2> hbs {{title}} page content</h2>
+           <h2>{{desc}}</h2> --}}
+
+
+<div class="form-container">
+        <img class="weather-image" src="{{weatherImge}}" alt="Weather photo">
+        <div class="form-overlay">
+            <form id="form1">
+                <div class="input-group">
+                    <input type="text" id="address" class="form-control" placeholder="Enter country name">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary btn-search">
+                            <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+            {{!-- <form id="form1">
+            <input type="text" id="address">
+            <button>Search</button>
+        </form> --}}
+          <p id="location"></p>
+          <p id="latitude"></p>
+          <p id="longitude"></p>
+          <p id="forecast"></p>
+          <p id="error"></p>
+          
+          
+          
+
+          
+          <script src="js/script.js"></script>
+      </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

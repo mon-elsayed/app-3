@@ -8,14 +8,14 @@ h2{
     color:black;
     /* padding: 5px; */
 }
-button{
+/* button{
     width:300px;
     height:45px;
     border:0;
     background-color: aqua;
     color:black;
     border-radius: 20px;
-}
+} */
 .headt1 {
     background-color: rgb(4, 41, 41);
     color: white;
@@ -35,4 +35,127 @@ button{
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 20px 30px;
+    color:rgb(42, 39, 67);
 }
+
+span{
+    color:brown
+}
+.home-header{
+    background-color: rgb(4, 41, 41);
+    color: white;
+    margin-top: 70px;
+    height: auto;
+    text-align: center;
+    /* padding-top:10px; */
+    padding: 15px;
+    /* padding-bottom: 5px; */
+}
+p{
+    background: rgb(197, 185, 185);
+    color:black;
+    /* padding: 5px; */
+}
+
+
+
+
+
+
+
+.input-group {
+    flex-wrap: nowrap;
+}
+.input-group-append {
+    margin-left: -1px; 
+    display: inline-block;
+}
+.btn-search {
+    padding: 0.5rem 1rem;
+    background-color: green;
+}
+.btn-search:active{
+    transform: none;
+    box-shadow: none;
+}
+.form-container {
+    position: relative;
+    width: 100%;
+    /* height: 100vh;  */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-image {
+    width: 100%;
+    height: 300px;
+    display: block;
+    
+}
+.form-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light layer with transparency */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.fas{
+color: white;
+}
+/* .fas:hover{
+    color: white; */
+
+    /* } */
+    .btn-search:hover{
+        background-color: rgb(22, 110, 22);
+        /* box-shadow: none;
+        border: 1px solid; */
+        /* .fas{
+            color:green;
+            } */
+    }
+#address{
+    height: 30px;
+    width: 50%;
+    outline: none;
+}
+
+
+
+
+
+  
+  @media(max-width: 900px){
+    .home-header{
+       
+        height: 100px;
+        
+    }
+    }
+    
+   
+  @media(max-width: 400px){
+    .home-header{
+        
+        height: 200px;
+        
+    }
+  }
+  @media(max-width: 600px){
+    .home-header{
+        
+        height: 180px;
+        
+    }
+  }
+
+
+
